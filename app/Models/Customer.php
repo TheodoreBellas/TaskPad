@@ -1,18 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id            Task ID
- * @property integer $project_id    Project ID
- * @property string $name           Task name
- * @property string $description    Task description
+ * @property integer $id            Customer ID            
+ * @property string $name           Customer name
  * @property string $created_at     Object creation datetime
- * @property string $updated_at     Object update datetime
+ * @property string $updated_at     Object update datetime    
  */
-class Task extends Model
+class Customer extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -20,8 +18,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'description'
+        'name'
     ];
 
     /*

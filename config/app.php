@@ -228,11 +228,11 @@ return [
 
         // -- Custom Aliases
 
-        'User'     => App\User::class,
-        'Customer' => App\Customer::class,
-        'Task'     => App\Task::class,
-        'TaskLog'  => App\TaskLog::class,
-        'Project'  => App\Project::class,
+        'User'     => App\Models\User::class,
+        'Customer' => App\Models\Customer::class,
+        'Task'     => App\Models\Task::class,
+        'TaskLog'  => App\Models\TaskLog::class,
+        'Project'  => App\Models\Project::class,
     ],
 
 ];
