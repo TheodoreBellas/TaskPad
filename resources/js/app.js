@@ -23,7 +23,7 @@ require( 'datatables.net-responsive-bs4' );
 /* jQuery Starts Here */
 
 $(function() {
-    $('table.datatable').DataTable();
+    $('table.dt').DataTable();
 })
 
 /* jQuery Ends Here */

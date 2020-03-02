@@ -6,9 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">TaskPad > Project List</div>
+                <div class="card-header">TaskPad > Projects</div>
 
-                <div class="card-body">
+                <div class="card-body col-md-12">
                     @if(session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -20,7 +20,7 @@
                             Sorry- no projects have been created just yet! Check back later.
                         </div>
                     @else
-                        <table class="table datatable table-bordered table-striped text-center">
+                        <table class="dt table table-striped table-bordered table-secondary text-center">
                             <thead>
                                 <tr>
                                     <th>Project Name</th>
@@ -29,12 +29,12 @@
                                     <th>View</th>
                                 </tr>
                             </thead>
-                            <tbody class=>
+                            <tbody>
                                 @foreach($projects as $project)
                                 <tr>
                                     <td>{{$project->name}}</td>
                                     <td>{{$project->customer->name}}</td>
-                                    <td>{{$project->tasks->count()}}</td>
+                                    <td><span class="badge badge-info">{{$project->tasks->count()}}</span></td>
                                     <td><a href="{{ route('projects.show', $project->id)}}">>></a></td>
                                 </tr>
                                 @endforeach

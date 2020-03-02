@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">TaskPad > Project List > {{ $project->name }} (#{{ $project->id }}) for Customer {{ $project->customer->name }}</div>
+                <div class="card-header">TaskPad > Projects > <span class="font-weight-bold">{{ $project->name }} (#{{ $project->id }})</span> for Customer <span class="font-weight-bold">{{ $project->customer->name }}</span></div>
 
                 <div class="card-body">
                     @if(session('status'))
@@ -20,28 +20,29 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        @foreach($project->tasks as $task)
-                            <div class="col-md-8 m-2 col-sm-12">
-                                <div class="m-2 card">
-                                    <div class="card-header">
-                                        <h3>{{ $loop->index+1 }}. {{ $task->name }}</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text my-1">
-                                            <label class="font-weight-bold">Task Description:</label>
-                                            <h5>{{ $task->description }}</h5>
-                                        </div>
-                                        <br>
-                                        <div class="card-text my-1">
-                                            <label class="font-weight-bold">Action(s):</label>
-                                            <br>
-                                            <button class="text-center btn btn-info">+ Log Time</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-lg-10 col-sm-12">
+                            <table class="table dt table-striped table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($project->tasks as $task)
+                                        <tr>
+                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $task->name }}</td>
+                                            <td>{{ $task->description }}</td>
+                                            <td>Add Time</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
 
-                        @endforeach
                     </div>
                 </div>
             </div>

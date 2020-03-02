@@ -16,10 +16,10 @@
                     <div class="card-text text-center">
                      Welcome to your dashboard! Choose from the option(s) below.
                     </div>
-                    <div class="card-text">
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="{{ route('projects.index')}}" class="btn btn-link">View Projects</a>
+                    <div class="card-text my-3">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <a href="{{ route('projects.index')}}" class="btn btn-block btn-link btn-info text-dark">View Projects</a>
                             </div>
                         </div>
                     </div>
