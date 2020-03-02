@@ -19,6 +19,9 @@ cp .env.example .env
 
 # Download required composer packages
 composer install
+
+# Set Laravel's application key
+php artisan key:generate
 ```
 
 ## Database Configuration
