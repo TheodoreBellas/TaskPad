@@ -5,7 +5,8 @@
  */
 
 require('./bootstrap');
-
+require( 'datatables.net-bs4' );
+require( 'datatables.net-responsive-bs4' );
 
 // We aren't using Vue at the moment, but we might in the future, so let's
 // disable it for now
@@ -22,7 +23,7 @@ require('./bootstrap');
 /* jQuery Starts Here */
 
 $(function() {
-    console.log("we're ready");
+    $('table.datatable').DataTable();
 })
 
 /* jQuery Ends Here */
