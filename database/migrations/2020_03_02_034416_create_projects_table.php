@@ -15,7 +15,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('customer_id');
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
@@ -26,6 +29,10 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
+        Schema::table('projects', function (Blueprint $table) {
+            $table->dropForeign(['customer_id']);
+        });
+
         Schema::dropIfExists('projects');
     }
 }
