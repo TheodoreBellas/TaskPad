@@ -18,7 +18,11 @@ class UserSeeder extends Seeder
         $json = json_decode($file_contents, true);
 
         foreach ($json as $entry) {
-            $user = User::firstOrCreate($entry);
+            $user = User::firstOrNew($entry);
+            if(!$user->exists) {
+                $user->password = Hash::make($entry['password']);
+                $user->save();
+            }
         }
     }
 }
