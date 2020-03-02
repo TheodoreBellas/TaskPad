@@ -7,14 +7,25 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     * 
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        //
+        return view('projects.index')
+        ->with('projects', Project::all());
     }
 
     /**
@@ -42,11 +53,12 @@ class ProjectController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Project  $project
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\View
      */
     public function show(Project $project)
     {
-        //
+        return view('projects.show')
+        ->with('project', $project);
     }
 
     /**

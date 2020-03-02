@@ -33,7 +33,15 @@ class Project extends Model
      */
     public function customer()
     {
-        return $this->hasOne(Customer::class);
+        return $this->belongsTo(Customer::class);
+    }
+
+    /**
+     * Get all of the tasks for this project.
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
     }
 
     /*

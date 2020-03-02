@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">TaskPad > Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <div class="card-text text-center">
+                     Welcome to your dashboard! Choose from the option(s) below.
+                    </div>
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{ route('projects.index')}}" class="btn btn-link">View Projects</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

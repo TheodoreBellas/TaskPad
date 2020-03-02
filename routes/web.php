@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::name('projects.')->prefix('projects')->group(function() {
+    Route::get('/', 'ProjectController@index')->name('index');
+    Route::get('/{project}', 'ProjectController@show')->name('show');
+});
