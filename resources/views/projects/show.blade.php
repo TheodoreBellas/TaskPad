@@ -16,7 +16,7 @@
                     @endif
                     <div class="row">
                         <div class="col-12">
-                            <legend>Project Tasks</legend>
+                            <legend>Project Tasks <span class="badge badge-info">{{$project->tasks->count()}}</span></legend>
                         </div>
                     </div>
                     <div class="row justify-content-center">
