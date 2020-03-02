@@ -17,8 +17,6 @@ class CreateTaskLogsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('task_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->string('description');
             $table->integer('duration_minutes');
             $table->timestamps();
 
