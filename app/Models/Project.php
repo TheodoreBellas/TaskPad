@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id            Project ID            
+ * @property integer $id            Project ID
  * @property integer $customer_id   Customer ID
  * @property string $name           Project name
  * @property string $description    Project description
  * @property string $created_at     Object creation datetime
- * @property string $updated_at     Object update datetime    
+ * @property string $updated_at     Object update datetime
  */
 class Project extends Model
 {
@@ -27,6 +27,13 @@ class Project extends Model
      -- Relationships
     */
 
+    /**
+     * Get the customer that this project belongs to.
+     */
+    public function customer()
+    {
+        return $this->hasOne(Customer::class);
+    }
 
     /*
      -- Scopes

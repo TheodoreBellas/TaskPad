@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TaskLog extends Model
 {
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -27,6 +27,21 @@ class TaskLog extends Model
      -- Relationships
     */
 
+    /**
+     * Get the user that created this task log entry.
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    /**
+     * Get the task this task log entry belongs to.
+     */
+    public function task()
+    {
+        return $this->hasOne(Task::class);
+    }
 
     /*
      -- Scopes

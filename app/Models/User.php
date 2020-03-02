@@ -36,4 +36,35 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /*
+     -- Relationships
+    */
+
+    /**
+     * Get the task logs this user has created.
+     */
+    public function taskLogs()
+    {
+        return $this->hasMany(TaskLog::class);
+    }
+
+    /*
+     -- Scopes
+    */
+
+     
+    /*
+     -- Accessors
+    */
+
+    /*
+     -- Mutators
+    */
+
+
+    /*
+     -- Utility
+    */
 }

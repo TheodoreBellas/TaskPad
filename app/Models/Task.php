@@ -28,6 +28,21 @@ class Task extends Model
      -- Relationships
     */
 
+    /**
+     * Get the project that this task belongs to.
+     */
+    public function project()
+    {
+        return $this->hasOne(Project::class);
+    }
+
+    /**
+     * Get the task logs for this task.
+     */
+    public function taskLogs()
+    {
+        return $this->hasMany(TaskLog::class);
+    }
 
     /*
      -- Scopes
