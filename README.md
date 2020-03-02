@@ -50,6 +50,8 @@ If you want to re-set it for any reason, you can run:
 ```
 php artisan migrate:reset
 ```
+## Compiling Front-End Assets
+You can use the built-in Webpack mix file to (re-)compile front-end assets using `npm run dev` (or `yarn run dev`). 
 
 ## Serving the Application
 You're more than welcome to set this application up inside of [`nginx`](https://www.nginx.com/) or [`httpd (Apache)`](https://httpd.apache.org/)- configuring [Laravel for both is well-documented](https://laravel.com/docs/6.x/installation#web-server-configuration)- but the quickest way to run the application locally is to use `artisan`'s `serve` command, as shown below:
