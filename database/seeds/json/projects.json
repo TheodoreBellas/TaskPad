@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "customer_id": 1,
+        "name": "Build New Desk",
+        "description": "The desk I have is great but I want to build a new, lighter one."
+    },
+    {
+        "id": 2,
+        "customer_id": 1,
+        "name": "Re-Wire Monitors",
+        "description": "The cabling behind my desk has built up into a bird's nest over the last year- time to fix it!"
+    },
+    {
+        "id": 3,
+        "customer_id": 2,
+        "name": "Customer Experience Improvement",
+        "description": "We need to make our customers' time in our cabs as stress-free and comfortable as possible. Several steps outlined."
+    },
+    {
+        "id": 4,
+        "customer_id": 2,
+        "name": "Office Upgrade",
+        "description": "We've outgrown our current offices- we need to search for a replacement and manage the move to a new, bigger place."
+    },
+    {
+        "id": 5,
+        "customer_id": 3,
+        "name": "March Sales Marketing & Promotion",
+        "description": "We're having a March Madness sale and we need to get the word out to everyone possible!"
+    }
+]

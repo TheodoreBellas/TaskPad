@@ -11,6 +11,12 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $file_contents = File::get('database/seeds/json/projects.json');
+
+        $json = json_decode($file_contents, true);
+
+        foreach ($json as $entry) {
+            $project = Project::firstOrCreate($entry);
+        }
     }
 }

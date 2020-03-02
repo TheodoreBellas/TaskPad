@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
-class CustomerSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +13,12 @@ class CustomerSeeder extends Seeder
      */
     public function run()
     {
-        $file_contents = File::get('database/seeds/json/customers.json');
+        $file_contents = File::get('database/seeds/json/users.json');
 
         $json = json_decode($file_contents, true);
 
         foreach ($json as $entry) {
-            $customer = Customer::firstOrCreate($entry);
+            $user = User::firstOrCreate($entry);
         }
     }
 }
