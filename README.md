@@ -20,6 +20,9 @@ cp .env.example .env
 # Download required composer packages
 composer install
 
+# Download required NPM packages
+npm install    # alternatively, `yarn install` 
+
 # Set Laravel's application key
 php artisan key:generate
 ```
