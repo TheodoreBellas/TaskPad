@@ -4,9 +4,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require( 'datatables.net-bs4' );
-require( 'datatables.net-responsive-bs4' );
+require("./bootstrap");
+require("datatables.net-bs4");
+require("datatables.net-responsive-bs4");
+require("@fortawesome/fontawesome-free");
 
 // We aren't using Vue at the moment, but we might in the future, so let's
 // disable it for now
@@ -19,11 +20,12 @@ require( 'datatables.net-responsive-bs4' );
 //     el: '#app',
 // });
 
-
 /* jQuery Starts Here */
 
 $(function() {
-    $('table.dt').DataTable();
-})
+    $("table.dt").DataTable();
+
+    $();
+});
 
 /* jQuery Ends Here */
