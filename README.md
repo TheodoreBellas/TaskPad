@@ -2,7 +2,7 @@
 TaskPad is a [Laravel 6](https://laravel.com)-powered application developed during the course of a job interview. See below for features, installation instructions, and more.
 
 # Features 
-- [ ] Simple user registration & authentication
+- [x] Simple user registration & authentication
 - [ ] Seeders for filling the database with demo information
 - [ ] Time tracking for user-created tasks
 
