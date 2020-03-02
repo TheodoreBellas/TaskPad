@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TaskLog;
+use App\Models\TaskLog;
 use Illuminate\Http\Request;
 
 class TaskLogController extends Controller
@@ -41,7 +41,7 @@ class TaskLogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TaskLog  $taskLog
+     * @param  \App\Models\TaskLog  $taskLog
      * @return \Illuminate\Http\Response
      */
     public function show(TaskLog $taskLog)
@@ -52,7 +52,7 @@ class TaskLogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TaskLog  $taskLog
+     * @param  \App\Models\TaskLog  $taskLog
      * @return \Illuminate\Http\Response
      */
     public function edit(TaskLog $taskLog)
@@ -64,7 +64,7 @@ class TaskLogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TaskLog  $taskLog
+     * @param  \App\Models\TaskLog  $taskLog
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, TaskLog $taskLog)
@@ -75,7 +75,7 @@ class TaskLogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TaskLog  $taskLog
+     * @param  \App\Models\TaskLog  $taskLog
      * @return \Illuminate\Http\Response
      */
     public function destroy(TaskLog $taskLog)
