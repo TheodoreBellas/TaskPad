@@ -4,9 +4,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require( 'datatables.net-bs4' );
-require( 'datatables.net-responsive-bs4' );
+require("./bootstrap");
+require("datatables.net-bs4");
+require("datatables.net-responsive-bs4");
+require("@fortawesome/fontawesome-free");
 
 // We aren't using Vue at the moment, but we might in the future, so let's
 // disable it for now
@@ -19,11 +20,23 @@ require( 'datatables.net-responsive-bs4' );
 //     el: '#app',
 // });
 
-
 /* jQuery Starts Here */
 
 $(function() {
-    $('table.dt').DataTable();
-})
+    // Initialize DataTables
+    $("table.dt").DataTable();
+
+    // Initialize Tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Task Log Modal Link Functionality
+    $("a.open-task-log-modal").click(function() {
+        var name = $(this).data("task-name");
+        var id = $(this).data("task-id");
+        $("#task-log-title").text(name);
+        $("#task-id").val(id);
+        $("#task-log-modal").modal("show");
+    });
+});
 
 /* jQuery Ends Here */
