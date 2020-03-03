@@ -85,8 +85,6 @@ $(function() {
             var time_to_store = 0;
         }
 
-        console.log("Seconds: ", seconds, " time to store: ", time_to_store);
-
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
