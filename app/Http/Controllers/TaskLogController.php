@@ -39,6 +39,8 @@ class TaskLogController extends Controller
         $request->validate([
             'project_id'    => 'required|exists:projects,id',
             'task_id'       => 'required|exists:tasks,id',
+            'timer_start'   => 'nullable',
+            'timer_end'     => 'nullable',
             'duration_minutes'  => 'required|numeric',
         ]);
 
@@ -54,7 +56,11 @@ class TaskLogController extends Controller
         $task_log->task_id = $task_id;
         $task_log->user_id = $request->user()->id;
         $task_log->duration_minutes = $duration;
+        $task_log->timer_start = ($request->input('timer_start')) ? date("Y-m-d H:i:s", strtotime($request->input('timer_start'))) : null;
+        $task_log->timer_end = ($request->input('timer_start')) ? date("Y-m-d H:i:s", strtotime(now())) : null;
         $task_log->save();
+
+
 
         return redirect()->back()->with('status', "Successfully saved your task log entry of {$duration} minute(s).");
     }

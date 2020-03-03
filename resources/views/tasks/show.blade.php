@@ -42,44 +42,34 @@
                                     </dd>
 
                                     <dt class="col-sm-3">Task Name</dt>
-                                    <dd class="col-sm-9">{{$task->name}}</dd>
+                                    <dd class="col-sm-9">{{ $task->name }}</dd>
 
                                     <dt class="col-sm-3">Task Description</dt>
-                                    <dd class="col-sm-9">{{$task->description}}</dd>
+                                    <dd class="col-sm-9">{{ $task->description }}</dd>
                                 </dl>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <legend>Tools</legend>
                                 <dl class="row">
-                                    <dt class="col-sm-3">Start Live Timer</dt>
-                                    <dd class="col-sm-9">
-                                        <a href="#" class="timer-start" id="timer-start">
+                                    <dt class="col-sm-4">Live Timer Controls</dt>
+                                    <dd class="col-sm-8">
+                                        <a data-toggle="tooltip" title="Start Timer" href="#" class="timer-start" id="timer-start">
                                             <i class="fa fa-play fa-2x"></i>
                                         </a>
+                                        <a data-toggle="tooltip" title="Pause Timer" href="#" class="d-none mx-2 timer-pause" id="timer-pause">
+                                            <i class="fa fa-pause fa-2x"></i>
+                                        </a>
+                                        <a data-toggle="tooltip" title="Stop Timer & Store Task Log" href="#" class="d-none mx-2 timer-stop" id="timer-stop" data-project-id="{{ $task->project->id }}" data-task-id="{{ $task->id }}">
+                                            <i class="fa fa-stop fa-2x"></i>
+                                        </a>
                                     </dd>
+                                    <dt class="col-sm-3 d-none timer-info">Time</dt>
+                                    <dd class="col-sm-9 d-none timer-info" id="timer-content"></dd>
 
-                                    {{-- <dt class="col-sm-3">Customer</dt>
-                                    <dd class="col-sm-9">
-                                        {{ $task->project->customer->name }}
-                                    </dd>
-
-                                    <dt class="col-sm-3">Task Name</dt>
-                                    <dd class="col-sm-9">{{$task->name}}</dd>
-
-                                    <dt class="col-sm-3">Task Description</dt>
-                                    <dd class="col-sm-9">{{$task->description}}</dd>
-
-                                    <dt class="col-sm-3">Nesting</dt>
-                                    <dd class="col-sm-9">
-                                        <dl class="row">
-                                            <dt class="col-sm-4">Nested definition list</dt>
-                                            <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                        </dl>
-                                    </dd> --}}
                                 </dl>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
