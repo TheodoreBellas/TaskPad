@@ -46,28 +46,25 @@ $(function() {
                 .show();
         });
 
-
-        var timer_state = $("#timer-content").data('state');
-        if(timer_state == "paused") {
-            $("#timer-content").timer('resume');
+        var timer_state = $("#timer-content").data("state");
+        if (timer_state == "paused") {
+            $("#timer-content").timer("resume");
         } else {
             $("#timer-content").timer({
                 // seconds: "60", // debug for saving times other than 0
             });
         }
 
-        $("#timer-content").data('timer-start', new Date().toLocaleString());
-
+        $("#timer-content").data("timer-start", new Date().toLocaleString());
     });
 
     $("#timer-pause").click(function() {
-        $("#timer-content").timer('pause');
+        $("#timer-content").timer("pause");
         $(this).hide("fast", function() {
-            $("#timer-start")
-                .show();
+            $("#timer-start").show();
         });
-
     });
+    
 
     $("#timer-stop").click(function() {
         // $("#timer-content").timer('pause');
@@ -78,8 +75,8 @@ $(function() {
             $("#timer-start").show();
         });
 
-        var seconds = $("#timer-content").data('seconds');
-        if(seconds > 60) {
+        var seconds = $("#timer-content").data("seconds");
+        if (seconds > 60) {
             var time_to_store = seconds / 60;
         } else {
             var time_to_store = 0;
@@ -87,21 +84,21 @@ $(function() {
 
         $.ajax({
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
             },
             type: "POST",
             url: "/task-logs",
             data: {
-                "project_id": $("#timer-stop").data('project-id'),
-                "task_id": $("#timer-stop").data('project-id'),
-                "duration_minutes": time_to_store,
-                "timer_start": $("#timer-content").data('timer-start'),
-                "async": true
+                project_id: $("#timer-stop").data("project-id"),
+                task_id: $("#timer-stop").data("project-id"),
+                duration_minutes: time_to_store,
+                timer_start: $("#timer-content").data("timer-start"),
+                async: true
             },
             success: function(data) {
                 alert("Data stored successfully!");
-                $("#timer-content").timer('remove');
-                console.log("Timer state: ", $("#timer-content").data('state'));
+                $("#timer-content").timer("remove");
+                console.log("Timer state: ", $("#timer-content").data("state"));
                 $(".timer-info").hide();
             },
             failure: function(error) {

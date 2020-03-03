@@ -65,7 +65,6 @@
                                     </dd>
                                     <dt class="col-sm-3 d-none timer-info">Time</dt>
                                     <dd class="col-sm-9 d-none timer-info" id="timer-content"></dd>
-
                                 </dl>
                             </div>
                         </div>
@@ -78,3 +77,12 @@
     </div>
 </div>
 @endsection
+
+<script type="text/javascript">
+    window.addEventListener("beforeunload", event => {
+        if ($("#timer-content").data('state') == 'running') {
+            event.returnValue = "You have unfinished changes!";
+        }
+    });
+
+</script>
