@@ -23,9 +23,20 @@ require("@fortawesome/fontawesome-free");
 /* jQuery Starts Here */
 
 $(function() {
+    // Initialize DataTables
     $("table.dt").DataTable();
 
-    $();
+    // Initialize Tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Task Log Modal Link Functionality
+    $("a.open-task-log-modal").click(function() {
+        var name = $(this).data("task-name");
+        var id = $(this).data("task-id");
+        $("#task-log-title").text(name);
+        $("#task-id").val(id);
+        $("#task-log-modal").modal("show");
+    });
 });
 
 /* jQuery Ends Here */

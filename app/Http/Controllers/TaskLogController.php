@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TaskLog;
 use Illuminate\Http\Request;
+use Task;
 
 class TaskLogController extends Controller
 {
@@ -31,11 +32,31 @@ class TaskLogController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'project_id'    => 'required|exists:projects,id',
+            'task_id'       => 'required|exists:tasks,id',
+            'duration_minutes'  => 'required|numeric',
+        ]);
+
+        $task_id = $request->input('task_id');
+        $project_id = $request->input('project_id');
+        $duration = $request->input('duration_minutes');
+
+        if (!Task::where(['id' => $task_id, 'project_id' => $project_id])->first()) {
+            return redirect()->back()->withErrors("Failed to load Task to create Task Log entry for.");
+        }
+
+        $task_log = new TaskLog();
+        $task_log->task_id = $task_id;
+        $task_log->user_id = $request->user()->id;
+        $task_log->duration_minutes = $duration;
+        $task_log->save();
+
+        return redirect()->back()->with('status', "Successfully saved your task log entry of {$duration} minute(s).");
     }
 
     /**
