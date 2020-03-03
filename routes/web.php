@@ -24,6 +24,10 @@ Route::name('projects.')->prefix('projects')->middleware('auth')->group(function
     Route::get('/{project}', 'ProjectController@show')->name('show');
 });
 
+Route::name('tasks.')->prefix('tasks')->middleware('auth')->group(function() {
+    Route::get('/{task}', 'TaskController@show')->name('show');
+});
+
 Route::name('task-logs.')->prefix('task-logs')->middleware('auth')->group(function () {
     Route::post('/', 'TaskLogController@store')->name('create');
 });
