@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">TaskPad > Dashboard</div>
+                <div class="card-header">TaskPad <i class="fa fa-angle-right mx-2"></i> Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -19,7 +19,9 @@
                     <div class="card-text my-3">
                         <div class="row justify-content-center">
                             <div class="col-8">
-                                <a href="{{ route('projects.index')}}" class="btn btn-block btn-link btn-info text-dark">View Projects</a>
+                                <a href="{{ route('projects.index')}}" class="btn btn-block btn-link btn-info text-dark">
+                                    <i class="fas fa-project-diagram"></i> View Projects
+                                </a>
                             </div>
                         </div>
                     </div>
