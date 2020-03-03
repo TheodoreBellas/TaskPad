@@ -7,7 +7,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    TaskPad > Projects > <span class="font-weight-bold">{{ $project->name }} (#{{ $project->id }})</span> for Customer <span class="font-weight-bold">{{ $project->customer->name }}</span>
+                   <a href="{{ route('home') }}">TaskPad</a>
+                    <i class="fa fa-angle-right mx-2"></i>
+                   <a href="{{ route('projects.index') }}">Projects</a>  
+                   <i class="fa fa-angle-right mx-2"></i>
+                   <span class="font-weight-bold">{{ $project->name }} (#{{ $project->id }})</span> for Customer <span class="font-weight-bold">{{ $project->customer->name }}</span>
                 </div>
 
                 <div class="card-body">
@@ -22,8 +26,8 @@
                         </div>
                     @endif
                     <div class="row">
-                        <div class="col-12">
-                            <legend>Project Tasks <span class="badge badge-info">{{ $project->tasks->count() }}</span></legend>
+                        <div class="col-lg-12">
+                        <h2><span class="badge {{ ($project->tasks->count()) ? 'badge-success text-dark' : 'badge-info'}}  align-top">{{ $project->tasks->count() }}</span> Project Tasks</h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -55,7 +59,7 @@
                         </div>
                     </div>
                     {{-- Include Form Modal --}}
-                    @include('projects.partials.modal', ['project' => $project]);
+                    @include('projects.partials.modal', ['project' => $project])
                     {{-- End Include Form Modal --}}
                 </div>
             </div>
