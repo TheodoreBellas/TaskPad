@@ -50,6 +50,15 @@ If you want to re-set it for any reason, you can run:
 ```
 php artisan migrate:reset
 ```
+
+The database seeders will seed only the data from files in the `database/seeds/json` directory, but should you want to add a larger amount of
+Faker-generated data, there's a custom Artisan command to do so:
+```
+php artisan operations:create-demo-data
+``` 
+
+This command utilizes several model factories to generate users, customers, projects, tasks, and task logs with fake/nonsensical data. However, all info generated will maintain proper/accurate inter-model relationships.
+ 
 ## Compiling Front-End Assets
 You can use the built-in Webpack mix file to (re-)compile front-end assets using `npm run dev` (or `yarn run dev`). To watch for changes, you can also replace `dev` with `watch-poll`.
 
