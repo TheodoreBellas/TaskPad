@@ -48,9 +48,24 @@
                                             <td>{{ $task->name }}</td>
                                             <td>{{ $task->description }}</td>
                                             <td>
-                                                <a href="#" class="open-task-log-modal" data-task-id="{{ $task->id }}" data-task-name="{{ $task->name }}">
-                                                    <i data-toggle="tooltip" data-placement="top" title="Log Task Time" class="fas fa-2x fa-clock"></i>
-                                                </a>
+                                                <ul class="navbar nav auto">
+                                                <li class="nav-item dropdown">
+                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                        <i class="fas fa-chevron-circle-down fa-2x"></i>
+                                                    </a>
+                            
+                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                        <a href="{{route('tasks.show', ['task' => $task->id])}}" class="dropdown-item" >
+                                                            <i class="fa fa-info-circle"></i> Task Details 
+                                                        </a>
+                                                        <a href="#" class="dropdown-item open-task-log-modal" data-task-id="{{ $task->id }}" data-task-name="{{ $task->name }}">
+                                                            <i class="fa fa-stopwatch"></i> Add Task Log Time
+                                                        </a>
+                                                        
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach
