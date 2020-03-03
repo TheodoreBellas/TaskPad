@@ -3,8 +3,8 @@ TaskPad is a [Laravel 6](https://laravel.com)-powered application developed duri
 
 # Features 
 - [x] Simple user registration & authentication
-- [ ] Seeders for filling the database with demo information
-- [ ] Time tracking for user-created tasks
+- [x] Seeders for filling the database with demo information
+- [x] Time tracking for user-created tasks
 
 # Configuration & Usage
 
@@ -61,3 +61,9 @@ php artisan serve --port=<desired port, 8080 by default>
 
 Note that if you really need to use port `80`, elevated privileges will be required.
 
+## Third-Party Components
+I used a few other libraries/tools to provide some of the functionality seen in this app, such as:
+- [jQuery 3.2](https://jquery.com/)
+- [Bootstrap 4](https://getbootstrap.com/)
+- [FontAwesome 5](https://fontawesome.com/)
+- [DataTables 1.10](https://datatables.net/)
