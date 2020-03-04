@@ -1,5 +1,5 @@
 # TaskPad
-TaskPad is a [Laravel 6](https://laravel.com)-powered application developed during the course of a job interview. See below for features, installation instructions, and more.
+TaskPad is a [Laravel 6](https://laravel.com)-powered application developed as a a very basic example CRUD application.
 
 # Features 
 - [x] Simple user registration & authentication
@@ -11,10 +11,10 @@ TaskPad is a [Laravel 6](https://laravel.com)-powered application developed duri
 ## Initial Configuration
 ```
 # Clone the repository
-git clone https://github.com/TheodoreBellas/CMM_TaskPad.git
+git clone https://github.com/TheodoreBellas/TaskPad.git
 
 # Copy over the example environment file
-cd CMM_TaskPad
+cd TaskPad
 cp .env.example .env
 
 # Download required composer packages
