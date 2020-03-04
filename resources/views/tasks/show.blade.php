@@ -84,5 +84,4 @@
             event.returnValue = "You have unfinished changes!";
         }
     });
-
 </script>

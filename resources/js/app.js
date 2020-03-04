@@ -98,6 +98,7 @@ $(function() {
             success: function(data) {
                 alert("Data stored successfully!");
                 $("#timer-content").timer("remove");
+                $("#timer-content").data('state', 'removed');
                 console.log("Timer state: ", $("#timer-content").data("state"));
                 $(".timer-info").hide();
             },
